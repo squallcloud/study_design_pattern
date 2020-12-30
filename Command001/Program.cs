@@ -20,6 +20,15 @@ namespace Command001
                 var student = new New.Student();
                 student.Execute();
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+            Console.WriteLine("Ex1");
+            {
+                var student = new Ex1.Student();
+                student.Execute();
+            }
         }
     }
 }
