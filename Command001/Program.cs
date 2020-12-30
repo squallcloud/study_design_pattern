@@ -6,7 +6,10 @@ namespace Command001
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            {
+                var student = new Old.Student();
+                student.Execute();
+            }
         }
     }
 }
