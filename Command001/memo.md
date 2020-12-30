@@ -55,3 +55,61 @@
             }
         ・・・
         ```
+    - クラス図
+    ```plantuml
+    @startuml
+    abstract Command {
+        {field} #beaker : Beaker
+        {abstract} +execute()
+        {method} +setBeaker(beaker : Beaker)
+    }
+    class AddSaltCommand {
+        {method} +execute()
+    }
+    class AddWaterCommand {
+        {method} +execute()
+    }
+    class MakeSaltWaterCommand {
+        {method} +execute()
+    }
+    class Beaker {
+        {method} +addWater(water : double)
+        {method} +addSalt(salt : double)
+        {method} +mix()
+        {method} +isMelted() : bool
+    }
+    class Student
+
+    Command <|-- AddSaltCommand
+    Command <|-- AddWaterCommand
+    Command <|-- MakeSaltWaterCommand
+
+    Student --> Command
+    Beaker <--o Command
+
+    @enduml
+    ```
+
+* クラス図
+```plantuml
+@startuml
+class Reciever {
+    {method} +action()
+}
+abstract Command {
+    {abstract} +execute()
+}
+class ConcreteCommand {
+    {field} -receiver:Reiever
+    {method} +execute()
+}
+class Invoker
+class Client
+
+Invoker o--> Command
+Command <|-- ConcreteCommand
+ConcreteCommand o--> Reciever
+ConcreteCommand <-- Client : "creates"
+
+@enduml
+```
