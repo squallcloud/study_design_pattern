@@ -1,5 +1,9 @@
 ﻿### コマンドパターン
 
+* 使用例
+  - コマンド履歴
+  - UNDO
+
 * 問題
   - 作業が増える度に下記if文が増えていく。
     ```cpp
@@ -113,3 +117,8 @@ ConcreteCommand <-- Client : "creates"
 
 @enduml
 ```
+
+* 参考
+  - [デザインパターン勉強会　第22回：Commandパターン](https://qiita.com/skyc_lin/items/0b4bbebd19225eaed054)
+  - [22．Commandパターン](https://www.techscore.com/tech/DesignPattern/Command.html/)
+  - [Commandパターン](https://gist.github.com/fujimisakari/2149e54c2e0db573017ac42e0f6a9772)
