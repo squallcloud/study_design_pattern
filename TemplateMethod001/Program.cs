@@ -6,7 +6,8 @@ namespace TemplateMethod001
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var client = new Example.Client();
+            client.Execute();
         }
     }
 }
