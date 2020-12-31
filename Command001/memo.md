@@ -67,13 +67,13 @@
         {abstract} +execute()
         {method} +setBeaker(beaker : Beaker)
     }
-    class AddSaltCommand {
+    class AddSaltCommand extends Command {
         {method} +execute()
     }
-    class AddWaterCommand {
+    class AddWaterCommand extends Command {
         {method} +execute()
     }
-    class MakeSaltWaterCommand {
+    class MakeSaltWaterCommand extends Command {
         {method} +execute()
     }
     class Beaker {
@@ -84,12 +84,9 @@
     }
     class Student
 
-    Command <|-- AddSaltCommand
-    Command <|-- AddWaterCommand
-    Command <|-- MakeSaltWaterCommand
-
-    Student --> Command
-    Beaker <--o Command
+    Student -right-> Command
+    Student -right-> Beaker
+    Beaker <-down-o Command
 
     @enduml
     ```
@@ -103,17 +100,17 @@ class Reciever {
 abstract Command {
     {abstract} +execute()
 }
-class ConcreteCommand {
-    {field} -receiver:Reiever
+class ConcreteCommand extends Command {
+    {field} -receiver:Reciever
     {method} +execute()
 }
 class Invoker
 class Client
 
-Invoker o--> Command
-Command <|-- ConcreteCommand
+Invoker o-right-> Command
 ConcreteCommand o--> Reciever
-ConcreteCommand <-- Client : "creates"
+ConcreteCommand <-left- Client : "creates"
+Reciever <-- Client : "creates"
 
 @enduml
 ```
