@@ -6,25 +6,4 @@
   - どのクラスをインスタンス化するかは __サブクラス__ に決定させる
 
 * クラス図
-```plantuml
-@startuml
-
-' クラス定義
-abstract Product
-class ConcreteProduct extends Product
-
-abstract Factory {
-    {abstract} +factoryMethod() : Product
-}
-class ConcreteFactory extends Factory {
-    {method} +factoryMethod() : Product
-}
-note left of ConcreteFactory::factoryMethod
-    return new ConcreteProduct()
-end note
-
-' 関係定義
-ConcreteFactory .right.> ConcreteProduct : インスタンス化 >
-
-@enduml
-```
+![クラス図](img/class.png)
