@@ -59,10 +59,10 @@
             }
         ・・・
         ```
-    - クラス図
+    - クラス図  
     ![クラス図](img/exsample_class/exsample_class.png)
 
-* クラス図
+* クラス図  
 ![クラス図](img/class/class.png)
 
 * 参考
