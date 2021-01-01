@@ -60,60 +60,10 @@
         ・・・
         ```
     - クラス図
-    ```plantuml
-    @startuml
-    abstract Command {
-        {field} #beaker : Beaker
-        {abstract} +execute()
-        {method} +setBeaker(beaker : Beaker)
-    }
-    class AddSaltCommand extends Command {
-        {method} +execute()
-    }
-    class AddWaterCommand extends Command {
-        {method} +execute()
-    }
-    class MakeSaltWaterCommand extends Command {
-        {method} +execute()
-    }
-    class Beaker {
-        {method} +addWater(water : double)
-        {method} +addSalt(salt : double)
-        {method} +mix()
-        {method} +isMelted() : bool
-    }
-    class Student
-
-    Student -right-> Command
-    Student -right-> Beaker
-    Beaker <-down-o Command
-
-    @enduml
-    ```
+    ![クラス図](img/exsample_class/exsample_class.png)
 
 * クラス図
-```plantuml
-@startuml
-class Reciever {
-    {method} +action()
-}
-abstract Command {
-    {abstract} +execute()
-}
-class ConcreteCommand extends Command {
-    {field} -receiver:Reciever
-    {method} +execute()
-}
-class Invoker
-class Client
-
-Invoker o-right-> Command
-ConcreteCommand o--> Reciever
-ConcreteCommand <-left- Client : "creates"
-Reciever <-- Client : "creates"
-
-@enduml
-```
+![クラス図](img/class/class.png)
 
 * 参考
   - [デザインパターン勉強会　第22回：Commandパターン](https://qiita.com/skyc_lin/items/0b4bbebd19225eaed054)

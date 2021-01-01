@@ -1,0 +1,28 @@
+@startuml
+abstract Command {
+    {field} #beaker : Beaker
+    {abstract} +execute()
+    {method} +setBeaker(beaker : Beaker)
+}
+class AddSaltCommand extends Command {
+    {method} +execute()
+}
+class AddWaterCommand extends Command {
+    {method} +execute()
+}
+class MakeSaltWaterCommand extends Command {
+    {method} +execute()
+}
+class Beaker {
+    {method} +addWater(water : double)
+    {method} +addSalt(salt : double)
+    {method} +mix()
+    {method} +isMelted() : bool
+}
+class Student
+
+Student -right-> Command
+Student -right-> Beaker
+Beaker <-down-o Command
+
+@enduml

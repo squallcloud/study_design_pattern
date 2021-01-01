@@ -1,0 +1,27 @@
+@startuml
+
+' クラス定義
+class Reciever {
+    {method} +action()
+}
+abstract Command {
+    {abstract} +execute()
+}
+class ConcreteCommand extends Command {
+    {field} -receiver:Reciever
+    {method} +execute()
+}
+note right of ConcreteCommand::execute
+    receiver.action()
+end note
+class Invoker
+class Client
+
+
+' 関係定義
+Invoker o-right-> Command : execute()呼び出し
+ConcreteCommand o--> Reciever
+ConcreteCommand <-left- Client : インスタンス化
+Reciever <-left- Client : インスタンス化
+
+@enduml
