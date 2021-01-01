@@ -1,0 +1,24 @@
+@startuml
+
+' クラス定義
+class Client {
+    {method} +Execute()
+}
+abstract AbstractClass {
+    {method} +templateMethod()
+    {abstract} #method1()
+    {abstract} #method2()
+}
+class ConcreteClass extends AbstractClass {
+    {method} #method1()
+    {method} #method2()
+}
+note right of Client::Execute
+    var obj = new ConcreteClass();
+    obj.templateMethod();
+end note
+
+' 関係定義
+ConcreteClass <.right. Client
+
+@enduml
